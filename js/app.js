@@ -27,13 +27,12 @@ const getData = async () => {
 			const $clone = d.importNode($template, true);
 			$fragment.appendChild($clone);
 		}
-
-		$slider.forEach((slider) => {
+		for (let i = 0; i < $slider.length; i += 1) {
 			// slider.innerHTML = '';
-			slider.appendChild($fragment);
-			console.log(slider);
-			console.log($template);
-		});
+			$slider[i].appendChild($fragment);
+		}
+		// $slider.forEach((slider) => {
+		// });
 	} catch (err) {
 		const message = err.statusTexttt || 'ocurrio un errorrrr';
 		$slider.innerHTML = `<figure>
