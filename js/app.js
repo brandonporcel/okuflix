@@ -15,17 +15,18 @@ const getData = async () => {
 		const json = await res.json();
 		const jsonData = await json.Search;
 		if (!res.ok) throw new Error();
-
-		jsonData.forEach((movie) => {
+		console.log(jsonData);
+		for (let i = 0; i < jsonData.length; i += 1) {
 			$template.querySelector('figure').classList.add('slider-figure');
 			$template.querySelector('img').classList.add('slider-img');
-			$template.querySelector('img').src = movie.Poster;
-			$template.querySelector('img').alt = movie.Title;
-			$template.querySelector('img').setAttribute('data-IMDB-Id', movie.imdbID);
-
+			$template.querySelector('img').src = jsonData[i].Poster;
+			$template.querySelector('img').alt = jsonData[i].Title;
+			$template
+				.querySelector('img')
+				.setAttribute('data-IMDB-Id', jsonData[i].imdbID);
 			const $clone = d.importNode($template, true);
 			$fragment.appendChild($clone);
-		});
+		}
 
 		$slider.forEach((slider) => {
 			// slider.innerHTML = '';
