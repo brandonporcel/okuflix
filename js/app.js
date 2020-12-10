@@ -1,12 +1,13 @@
 const d = document;
 const $slider = d.querySelectorAll('.slider');
-const baseUrl = 'http://www.omdbapi.com';
+const $rankSlider = d.querySelector('.rank-slider');
 const getData = async () => {
 	try {
 		$slider.forEach((slider) => {
 			slider.innerHTML =
 				'<img class="loader" src="assets/img/loader.svg" alt="loader" />';
 		});
+		const baseUrl = 'http://www.omdbapi.com';
 		const key = 'c075c45e';
 		const res = await fetch(`${baseUrl}?s=buenos+aires&apikey=${key}`);
 		const json = await res.json();
@@ -23,12 +24,8 @@ const getData = async () => {
 		}
 		$slider.forEach((slider) => {
 			slider.innerHTML = '';
-			slider.innerHTML += $template;
 		});
-		// for (let i = 0; i < $slider.length; i += 1) {
-		// 	// slider.innerHTML = '';
-		// 	$slider[i].appendChild($fragment);
-		// }
+		$rankSlider.innerHTML = $template;
 	} catch (err) {
 		const message = err.statusTexttt || 'ocurrio un errorrrr';
 		$slider.innerHTML = `<figure>
