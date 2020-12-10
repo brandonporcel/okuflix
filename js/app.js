@@ -1,8 +1,5 @@
 const d = document;
 const $slider = d.querySelectorAll('.slider');
-const $template = d.getElementById('slider-template').content;
-const $fragment = d.createDocumentFragment();
-// const $sliderImg = d.querySelector('.slider-img');
 const baseUrl = 'http://www.omdbapi.com';
 const getData = async () => {
 	try {
@@ -14,25 +11,24 @@ const getData = async () => {
 		const res = await fetch(`${baseUrl}?s=buenos+aires&apikey=${key}`);
 		const json = await res.json();
 		const jsonData = await json.Search;
+		let $template = '';
 		if (!res.ok) throw new Error();
-		console.log(jsonData);
 		for (let i = 0; i < jsonData.length; i += 1) {
-			$template.querySelector('figure').classList.add('slider-figure');
-			$template.querySelector('img').classList.add('slider-img');
-			$template.querySelector('img').src = jsonData[i].Poster;
-			$template.querySelector('img').alt = jsonData[i].Title;
-			$template
-				.querySelector('img')
-				.setAttribute('data-IMDB-Id', jsonData[i].imdbID);
-			const $clone = d.importNode($template, true);
-			$fragment.appendChild($clone);
+			$template += `
+			<figure class="slider-figure">
+				<img class="slider-img" src="${jsonData[i].Poster}" alt="${jsonData[i].Title}" data-imdb-id="${jsonData[i].imdbID}">
+				<figcaption>
+			</figcaption></figure>
+			`;
 		}
-		for (let i = 0; i < $slider.length; i += 1) {
-			// slider.innerHTML = '';
-			$slider[i].appendChild($fragment);
-		}
-		// $slider.forEach((slider) => {
-		// });
+		$slider.forEach((slider) => {
+			slider.innerHTML = '';
+			slider.innerHTML += $template;
+		});
+		// for (let i = 0; i < $slider.length; i += 1) {
+		// 	// slider.innerHTML = '';
+		// 	$slider[i].appendChild($fragment);
+		// }
 	} catch (err) {
 		const message = err.statusTexttt || 'ocurrio un errorrrr';
 		$slider.innerHTML = `<figure>
