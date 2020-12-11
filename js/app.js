@@ -1,4 +1,4 @@
-const d = document;
+/* const d = document;
 const $slider = d.querySelectorAll('.slider');
 const $rankSlider = d.querySelector('.rank-slider');
 const getData = async () => {
@@ -33,6 +33,40 @@ const getData = async () => {
 		</figure>`;
 		console.log(err);
 	}
+};
+d.addEventListener('DOMContentLoaded', () => {
+	getData();
+}); */
+const d = document;
+const $slider = d.querySelectorAll('.slider');
+const $rankSlider = d.querySelector('.rank-slider');
+const getData = async () => {
+	const baseUrl = 'http://www.omdbapi.com';
+	const key = 'c075c45e';
+	let i = 0;
+	let bsAsData;
+	let animeData;
+	let $template = '';
+	Promise.all([
+		fetch(`${baseUrl}?s=buenos+aires&apikey=${key}`),
+		fetch(`${baseUrl}?s=anime&apikey=${key}`),
+	])
+		.then((responses) =>
+			Promise.all(responses.map((eachResponse) => eachResponse.json()))
+		)
+		.then((json) => {
+			bsAsData = json[0].Search;
+			animeData = json[1].Search;
+			for (i; i < bsAsData.length; i += 1) {
+				$template += `<figure class="slider-figure">
+					<img class="slider-img" src="${bsAsData[i].Poster}" alt="${bsAsData[i].Title}" data-imdb-id="${bsAsData[i].imdbID}">
+					<figcaption>
+				</figcaption></figure>`;
+			}
+
+			$rankSlider.innerHTML = $template;
+		})
+		.catch((err) => console.log(err));
 };
 d.addEventListener('DOMContentLoaded', () => {
 	getData();
