@@ -1,42 +1,3 @@
-/* const d = document;
-const $slider = d.querySelectorAll('.slider');
-const $rankSlider = d.querySelector('.rank-slider');
-const getData = async () => {
-	try {
-		$slider.forEach((slider) => {
-			slider.innerHTML =
-				'<img class="loader" src="assets/img/loader.svg" alt="loader" />';
-		});
-		const baseUrl = 'http://www.omdbapi.com';
-		const key = 'c075c45e';
-		const res = await fetch(`${baseUrl}?s=buenos+aires&apikey=${key}`);
-		const json = await res.json();
-		const jsonData = await json.Search;
-		let $template = '';
-		if (!res.ok) throw new Error();
-		for (let i = 0; i < jsonData.length; i += 1) {
-			$template += `
-			<figure class="slider-figure">
-				<img class="slider-img" src="${jsonData[i].Poster}" alt="${jsonData[i].Title}" data-imdb-id="${jsonData[i].imdbID}">
-				<figcaption>
-			</figcaption></figure>
-			`;
-		}
-		$slider.forEach((slider) => {
-			slider.innerHTML = '';
-		});
-		$rankSlider.innerHTML = $template;
-	} catch (err) {
-		const message = err.statusTexttt || 'ocurrio un errorrrr';
-		$slider.innerHTML = `<figure>
-		<figcaption>error:${err.status}: ${message} </figcaption>
-		</figure>`;
-		console.log(err);
-	}
-};
-d.addEventListener('DOMContentLoaded', () => {
-	getData();
-}); */
 const d = document;
 const $slider = d.querySelectorAll('.slider');
 const $rankSlider = d.querySelector('.rank-slider');
@@ -59,6 +20,28 @@ const getData = async () => {
 		.then((json) => {
 			bsAsData = json[0].Search;
 			animeData = json[1].Search;
+			const bsAsDataTemplate = () => {
+				for (i; i < bsAsData.length; i += 1) {
+					$bsAsTemplate += `<figure class="slider-figure">
+							<img class="slider-img" src="${bsAsData[i].Poster}" alt="${bsAsData[i].Title}" data-imdb-id="${bsAsData[i].imdbID}">
+							<figcaption>
+						</figcaption></figure>`;
+				}
+				return $bsAsTemplate;
+			};
+			const animeDataTemplate = () => {
+				for (i; i < animeData.length; i += 1) {
+					$animeTemplate += `<figure class="slider-figure">
+							<img class="slider-img" src="${animeData[i].Poster}" alt="${animeData[i].Title}" data-imdb-id="${animeData[i].imdbID}">
+							<figcaption>
+						</figcaption></figure>`;
+				}
+				return $animeTemplate;
+			};
+
+			$animeSlider.innerHTML = animeDataTemplate();
+			$rankSlider.innerHTML = bsAsDataTemplate();
+
 			// for (i; i < bsAsData.length; i += 1) {
 			// 	$bsAsTemplate += `<figure class="slider-figure">
 			// 		<img class="slider-img" src="${bsAsData[i].Poster}" alt="${bsAsData[i].Title}" data-imdb-id="${bsAsData[i].imdbID}">
@@ -73,9 +56,7 @@ const getData = async () => {
 			// 	console.log($animeTemplate);
 			// 	console.log(i);
 			// }
-			for (i; i < 5; i += 1) {
-				console.log(i);
-			}
+
 			// console.log(animeData);
 			// $animeSlider.innerHTML = $animeTemplate;
 			// $rankSlider.innerHTML = $bsAsTemplate;
