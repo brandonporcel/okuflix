@@ -19,15 +19,37 @@ const getData = async () => {
 		.then((json) => {
 			bsAsData = json[0].Search;
 			animeData = json[1].Search;
-			const bsAsDataTemplate = () => {
-				for (i; i < bsAsData.length; i += 1) {
+			bsAsData.forEach((el) => {
+				const bsAsDataTemplate = () => {
 					$bsAsTemplate += `<figure class="slider-figure">
-							<img class="slider-img" src="${bsAsData[i].Poster}" alt="${bsAsData[i].Title}" data-imdb-id="${bsAsData[i].imdbID}">
+							<img class="slider-img" src="${el.Poster}" alt="${el.Title}" data-imdb-id="${el.imdbID}">
 							<figcaption>
 						</figcaption></figure>`;
-				}
-				return $bsAsTemplate;
-			};
+					return $bsAsTemplate;
+				};
+				$bsasSlider.innerHTML = bsAsDataTemplate();
+				animeData.forEach((elem) => {
+					const animeDataTemplate = () => {
+						for (i; i < animeData.length; i += 1) {
+							$animeTemplate += `<figure class="slider-figure">
+							<img class="slider-img" src="${animeData[i].Poster}" alt="${animeData[i].Title}" data-imdb-id="${animeData[i].imdbID}">
+							<figcaption>
+						</figcaption></figure>`;
+						}
+						return $animeTemplate;
+					};
+					$animeSlider.innerHTML = animeDataTemplate();
+				});
+			});
+			// const bsAsDataTemplate = () => {
+			// 	for (i; i < bsAsData.length; i += 1) {
+			// 		$bsAsTemplate += `<figure class="slider-figure">
+			// 				<img class="slider-img" src="${bsAsData[i].Poster}" alt="${bsAsData[i].Title}" data-imdb-id="${bsAsData[i].imdbID}">
+			// 				<figcaption>
+			// 			</figcaption></figure>`;
+			// 	}
+			// 	return $bsAsTemplate;
+			// };
 			// const animeDataTemplate = () => {
 			// 	for (i; i < animeData.length; i += 1) {
 			// 		$animeTemplate += `<figure class="slider-figure">
@@ -37,21 +59,8 @@ const getData = async () => {
 			// 	}
 			// 	return $animeTemplate;
 			// };
-			$bsasSlider.innerHTML = bsAsDataTemplate();
 			// $animeSlider.innerHTML = animeDataTemplate();
-		})
-		.then(() => {
-			console.log(animeData);
-			const animeDataTemplate = () => {
-				for (i; i < animeData.length; i += 1) {
-					$animeTemplate += `<figure class="slider-figure">
-								<img class="slider-img" src="${animeData[i].Poster}" alt="${animeData[i].Title}" data-imdb-id="${animeData[i].imdbID}">
-								<figcaption>
-							</figcaption></figure>`;
-				}
-				return $animeTemplate;
-			};
-			$animeSlider.innerHTML = animeDataTemplate();
+			// $bsasSlider.innerHTML = bsAsDataTemplate();
 		})
 		.catch((err) => console.log(err));
 };
