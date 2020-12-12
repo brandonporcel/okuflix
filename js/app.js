@@ -27,20 +27,19 @@ const getData = async () => {
 						</figcaption></figure>`;
 					return $bsAsTemplate;
 				};
-				$bsasSlider.innerHTML = bsAsDataTemplate();
 				animeData.forEach((elem) => {
 					const animeDataTemplate = () => {
-						for (i; i < animeData.length; i += 1) {
-							$animeTemplate += `<figure class="slider-figure">
-							<img class="slider-img" src="${animeData[i].Poster}" alt="${animeData[i].Title}" data-imdb-id="${animeData[i].imdbID}">
+						$animeTemplate += `<figure class="slider-figure">
+							<img class="slider-img" src="${elem.Poster}" alt="${elem.Title}" data-imdb-id="${elem.imdbID}">
 							<figcaption>
 						</figcaption></figure>`;
-						}
 						return $animeTemplate;
 					};
-					$animeSlider.innerHTML = animeDataTemplate();
+					console.log($animeTemplate);
 				});
+				$bsasSlider.innerHTML = bsAsDataTemplate();
 			});
+			$animeSlider.innerHTML = $animeTemplate;
 			// const bsAsDataTemplate = () => {
 			// 	for (i; i < bsAsData.length; i += 1) {
 			// 		$bsAsTemplate += `<figure class="slider-figure">
