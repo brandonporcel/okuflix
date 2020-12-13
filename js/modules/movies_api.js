@@ -14,7 +14,16 @@ export function consumingApi() {
 		fetch(`${baseUrl}?s=anime&apikey=${key}`),
 	])
 		.then((responses) =>
-			Promise.all(responses.map((eachResponse) => eachResponse.json()))
+			Promise.all(
+				responses.map((eachResponse) => {
+					if (!eachResponse.ok)
+						throw {
+							status: eachResponse.status,
+							statusText: eachResponse.statusText,
+						};
+					return eachResponse.json();
+				})
+			)
 		)
 		.then((json) => {
 			bsAsData = json[0].Search;
@@ -50,5 +59,11 @@ export function consumingApi() {
 				$animeSlider.innerHTML = animeDataTemplate();
 			});
 		})
-		.catch((err) => console.log(err));
+		.catch((err) => {
+			const message = err.statusText || 'ocurrio un err';
+			$sliders.forEach((el) => {
+				el.classList.add('error');
+				el.innerHTML = `error ${err.status}: ${message}`;
+			});
+		});
 }

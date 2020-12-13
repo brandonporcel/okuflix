@@ -24,10 +24,9 @@ body {
 .ctn {
 	padding: 0 100px;
 }
-/* figure {
-	display: inline-block;
-	margin: 0;
-} */
+.error {
+	color: var(--red);
+}
 .btn {
 	outline: none;
 	background-color: transparent;
