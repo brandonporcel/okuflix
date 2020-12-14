@@ -38,10 +38,9 @@ export function consumingApi() {
 			});
 			bsAsData.forEach((el) => {
 				const bsAsDataTemplate = () => {
-					$bsAsTemplate += `<figure class="slider-figure">
+					$bsAsTemplate += `<figure title="${el.Title}" class="slider-figure cursor-grab">
 							<img class="slider-img" src="${el.Poster}" alt="${el.Title}" data-imdb-id="${el.imdbID}">
-							<figcaption>
-						</figcaption></figure>`;
+						</figure>`;
 					return $bsAsTemplate;
 				};
 
@@ -49,10 +48,9 @@ export function consumingApi() {
 			});
 			animeData.forEach((elem) => {
 				const animeDataTemplate = () => {
-					$animeTemplate += `<figure class="slider-figure">
+					$animeTemplate += `<figure title="${elem.Title}" class="slider-figure slider-success cursor-grab">
 						<img class="slider-img" src="${elem.Poster}" alt="${elem.Title}" data-imdb-id="${elem.imdbID}">
-						<figcaption>
-					</figcaption></figure>`;
+					</figure>`;
 					return $animeTemplate;
 				};
 
