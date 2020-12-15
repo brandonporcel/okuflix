@@ -17,6 +17,7 @@
 		<link rel="stylesheet" href="css/styles.css" />
 	</head>
 	<body>
+		
 		<header class="header ctn">
 			<div class="header-left">
 				<h1>
@@ -37,15 +38,18 @@
 		<main class="main">
 			<div class="main-overlay"></div>
 			<div class="main-video">
-				<video src="assets/video/bojack.mp4" autoplay loop></video>
+				<video id="video" src="assets/video/bojackk.mp4" loop ></video>
 			</div>
+			<button id="volume" class="main-volume">
+				<img class="img-fluid" src="assets/img/volume.svg" alt="volume icon">
+			</button>
 			<section class="main-content">
 				<h2 class="movie-info-title">Bojack Horseman</h2>
 				<p class="movie-info">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
 					doloremque assumenda ratione cupiditate earum, veniam, deleniti iusto
 					saepe nulla dicta voluptas maiores quidem, esse excepturi! Minus quis
-					saepe magni itaque.
+					saepe magni itaque.a
 				</p>
 				<div class="movie-info-buttons">
 					<button class="btn">Reproducir</button>
@@ -54,7 +58,6 @@
 			</section>
 			<nav class="main-nav">
 				<span class="main-nav-item">overview</span>
-				<span class="main-nav-item">episodes</span>
 				<span class="main-nav-item">details</span>
 			</nav>
 		</main>
@@ -92,6 +95,6 @@
 				<figcaption>
 			</figure>
 		</template>
-		<script src="js/app.js" type="module"></script>
+		<script src="js/app.js"  type="module"></script>
 	</body>
 </html>

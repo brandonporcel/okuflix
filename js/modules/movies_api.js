@@ -1,4 +1,4 @@
-export function consumingApi() {
+export function consumiendoApi() {
 	const d = document;
 	const $sliders = d.querySelectorAll('.slider');
 	const $bsasSlider = d.querySelector('.bsas-slider');

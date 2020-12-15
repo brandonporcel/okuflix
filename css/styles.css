@@ -30,6 +30,10 @@ body {
 .cursor-grab {
 	cursor: grab;
 }
+.img-fluid {
+	width: 100%;
+	height: auto;
+}
 .btn {
 	outline: none;
 	background-color: transparent;
@@ -116,6 +120,21 @@ h1 {
 	position: absolute;
 	height: 500px;
 	width: 50%;
+}
+.main-volume {
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid var(--white);
+	top: 70%;
+	right: 100px;
+	padding: 10px;
+	cursor: pointer;
+	outline: none;
 }
 .main-content {
 	position: absolute;
