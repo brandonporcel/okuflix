@@ -141,7 +141,7 @@ h1 {
 	top: 75px;
 	left: 100px;
 	color: var(--white);
-	width: 600px;
+	width: 50%;
 }
 .movie-info-title {
 	font-size: 42px;

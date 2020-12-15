@@ -29,19 +29,13 @@ export function contenidoPrincipal() {
 		d.querySelector('.nav-first-item').classList.add('active');
 		$navItems.forEach((item) => {
 			item.addEventListener('click', (e) => {
-				// if (!e.target.classList.contains('active')) {
-				// // e.target.classList.remove('active');
 				if (!e.target.matches('nav-first-item')) {
-					e.target.classList.add('active');
-				}
-				if (e.target.matches('.nav-first-item')) {
+					d.querySelector('.nav-first-item').classList.remove('active');
 					e.target.classList.add('active');
 				} else {
-					d.querySelector('.nav-first-item').classList.remove('active');
+					d.querySelector('.nav-first-item').classList.add('active');
+					// aca deberia hacer algo como-> todo aquel elemento que tenga clase active,eliminar but I CANTTT DO IT
 				}
-				// } else {
-				// d.querySelector('.nav-first-item').classList.add('active');
-				// }
 			});
 		});
 	};
