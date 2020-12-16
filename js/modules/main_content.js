@@ -27,12 +27,11 @@ export function contenidoPrincipal() {
 		const $contentCtn = d.getElementById('main-content');
 		const $temaplateTag = d.getElementById('details-view').content;
 		console.log($temaplateTag);
-
 		try {
 			const res = await fetch('pages/detalles.html');
 			const text = await res.text();
 			$contentCtn.innerHTML = text;
-			// d.querySelector('.poster').innerHTML = te
+			d.querySelector('.details-view').innerHTML = 'detalees';
 		} catch (err) {
 			console.log(err);
 		}
@@ -43,6 +42,7 @@ export function contenidoPrincipal() {
 			if (e.target.matches('.nav-first-item')) {
 				e.target.classList.add('active');
 				d.querySelector('.nav-second-item').classList.remove('active');
+				llamadoPrincipal();
 			}
 			if (e.target.matches('.nav-second-item')) {
 				e.target.classList.add('active');
