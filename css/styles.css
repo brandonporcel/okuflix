@@ -46,6 +46,9 @@ body *::selection {
 	border-radius: 30px;
 	width: 140px;
 }
+.none {
+	display: none;
+}
 
 /* header */
 .header {
@@ -94,9 +97,11 @@ h1 {
 /* main */
 .main {
 	position: relative;
+	height: 500px;
 }
 .main-video {
-	height: 500px;
+	/* el del padre,el main */
+	height: inherit;
 	overflow: hidden;
 }
 

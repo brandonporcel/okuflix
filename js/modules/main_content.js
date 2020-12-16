@@ -25,16 +25,14 @@ export function contenidoPrincipal() {
 	};
 	const llamadoDetalles = async () => {
 		const $contentCtn = d.getElementById('main-content');
-		// hago esto porque si el contenedor le pondo un innerhtml=algo,los elementos con absolute no se eliminan
-		// const $absoluteElems = d.querySelectorAll('.absolute-remove-js');
-		// $absoluteElems.forEach((el) => {
-		// 	el.remove();
-		// });
+		// const a = d.querySelectorAll('.absolute-remove-js');
 		try {
-			const res = await fetch('../../pages/detalles.html');
+			const res = await fetch('pages/detalles.html');
 			const text = await res.text();
 			$contentCtn.innerHTML = text;
-			// console.log('xDDd');
+			// a.forEach((el) => {
+			// 	el.remove();
+			// });
 		} catch (err) {
 			console.log(err);
 		}
