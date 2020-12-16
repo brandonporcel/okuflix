@@ -97,7 +97,6 @@ h1 {
 }
 .main-video {
 	height: 500px;
-	border: 1px solid;
 	overflow: hidden;
 }
 
@@ -116,7 +115,6 @@ h1 {
 		rgba(0, 0, 0, 0.9) 85%,
 		rgba(0, 0, 0, 1)
 	);
-
 	position: absolute;
 	height: 500px;
 	width: 50%;

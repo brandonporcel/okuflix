@@ -1,8 +1,8 @@
 const d = document;
 export function contenidoPrincipal() {
-	const $movieInfo = d.getElementById('movie-info');
-	const $movieTitle = d.getElementById('movie-title');
 	const api = async () => {
+		const $movieInfo = d.getElementById('movie-info');
+		const $movieTitle = d.getElementById('movie-title');
 		try {
 			const res = await fetch(
 				'http://www.omdbapi.com/?t=bojack+horseman+&apikey=c075c45e'
@@ -23,6 +23,22 @@ export function contenidoPrincipal() {
 			$movieTitle.innerHTML = `error ${err.status}: ${message}`;
 		}
 	};
+	const llamadoDetalles = async () => {
+		const $contentCtn = d.getElementById('main-content');
+		// hago esto porque si el contenedor le pondo un innerhtml=algo,los elementos con absolute no se eliminan
+		// const $absoluteElems = d.querySelectorAll('.absolute-remove-js');
+		// $absoluteElems.forEach((el) => {
+		// 	el.remove();
+		// });
+		try {
+			const res = await fetch('../../pages/detalles.html');
+			const text = await res.text();
+			$contentCtn.innerHTML = text;
+			// console.log('xDDd');
+		} catch (err) {
+			console.log(err);
+		}
+	};
 	const nav = () => {
 		d.querySelector('.nav-first-item').classList.add('active');
 		d.addEventListener('click', (e) => {
@@ -33,6 +49,7 @@ export function contenidoPrincipal() {
 			if (e.target.matches('.nav-second-item')) {
 				e.target.classList.add('active');
 				d.querySelector('.nav-first-item').classList.remove('active');
+				llamadoDetalles();
 			}
 		});
 	};
