@@ -1,5 +1,7 @@
 const d = document;
 export function contenidoPrincipal() {
+	const $detailsCtn = d.getElementById('details-view');
+	const $overviewCtn = d.getElementById('overview-view');
 	const api = async () => {
 		const $movieInfo = d.getElementById('movie-info');
 		const $movieTitle = d.getElementById('movie-title');
@@ -18,11 +20,16 @@ export function contenidoPrincipal() {
 			$movieTitle.innerHTML = bojackInfo.Title;
 
 			d.getElementById('poster').src = bojackInfo.Poster;
+			d.getElementById('poster').alt = bojackInfo.Title;
+			d.getElementById('year').innerHTML = bojackInfo.Year;
+			d.getElementById('rated').innerHTML = bojackInfo.Rated;
+			d.getElementById(
+				'total-seasons'
+			).innerHTML = `${bojackInfo.totalSeasons} temporadas`;
 			d.getElementById('writer').innerHTML = bojackInfo.Writer;
 			d.getElementById('actors').innerHTML = bojackInfo.Actors;
 			d.getElementById('genre').innerHTML = bojackInfo.Genre;
 		} catch (err) {
-			console.log(err);
 			const message = err.statusText || 'ocurrio un fallo con la informacion';
 			$movieTitle.classList.add('error');
 			$movieTitle.innerHTML = `error ${err.status}: ${message}`;
@@ -30,15 +37,17 @@ export function contenidoPrincipal() {
 	};
 
 	const nav = () => {
+		const $overviewBtn = d.querySelector('.nav-first-item');
+		const $detailsBtn = d.querySelector('.nav-second-item');
 		d.querySelector('.nav-first-item').classList.add('active');
 		d.addEventListener('click', (e) => {
-			if (e.target.matches('.nav-first-item')) {
+			if (e.target === $overviewBtn) {
 				e.target.classList.add('active');
-				d.querySelector('.nav-second-item').classList.remove('active');
+				$detailsBtn.classList.remove('active');
 			}
-			if (e.target.matches('.nav-second-item')) {
+			if (e.target === $detailsBtn) {
 				e.target.classList.add('active');
-				d.querySelector('.nav-first-item').classList.remove('active');
+				$overviewBtn.classList.remove('active');
 			}
 		});
 	};

@@ -48,7 +48,7 @@
     margin-right: 0;
     text-overflow: ellipsis;
     width: 100%; -->
-				<div class="main-view none">
+				<div id="overview-view">
 					<h1 id="movie-title" class="movie-info-title"></h1>
 					<p id="movie-info" class="movie-info"></p>
 					<div class="movie-info-buttons">
@@ -56,12 +56,14 @@
 						<button class="btn">+Mi lista</button>
 					</div>
 				</div>
-				<div class="details-view">
+				<div id="details-view none">
 					<div class="movie-data">
-							<img id="poster" class="poster" src="" alt="" />
-							<span id="year">2016-2018</span>
-							<span id="rated">16+</span>
-							<span id="totalSeasons">5 tempossss</span>
+							<img id="poster" class="data-poster"/>
+							<span id="year"></span>
+							|
+							<span id="rated"></span>
+							|
+							<span id="total-seasons"></span>
 						</div>
 						<div class="credit-summary-item">
 							<h4 class="credit-summary-category">Actores: </h4>
