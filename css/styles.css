@@ -42,9 +42,9 @@ body *::selection {
 	background-color: transparent;
 	color: inherit;
 	border: 1px solid;
-	padding: 15px 25px;
+	padding: 10px 20px;
 	border-radius: 30px;
-	width: 140px;
+	width: 125px;
 }
 .none {
 	display: none;
@@ -65,11 +65,13 @@ body *::selection {
 	display: flex;
 	align-items: center;
 }
-h1 {
+.logo-ctn {
 	margin: 0;
 	height: 50px;
 	width: 100px;
 	margin-right: 70px;
+	display: flex;
+	align-items: center;
 }
 .search-input {
 	height: 30px;
@@ -79,10 +81,6 @@ h1 {
 	background-color: var(--gray);
 	border: 0.5px solid var(--gray-modal);
 	padding: 0 10px;
-}
-.logo {
-	width: 100%;
-	height: auto;
 }
 .header-right {
 	display: flex;
@@ -144,7 +142,7 @@ h1 {
 	top: 75px;
 	left: 100px;
 	color: var(--white);
-	width: 50%;
+	width: 40%;
 }
 .movie-info-title {
 	font-size: 42px;

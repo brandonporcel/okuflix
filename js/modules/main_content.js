@@ -25,14 +25,10 @@ export function contenidoPrincipal() {
 	};
 	const llamadoDetalles = async () => {
 		const $contentCtn = d.getElementById('main-content');
-		// const a = d.querySelectorAll('.absolute-remove-js');
 		try {
 			const res = await fetch('pages/detalles.html');
 			const text = await res.text();
 			$contentCtn.innerHTML = text;
-			// a.forEach((el) => {
-			// 	el.remove();
-			// });
 		} catch (err) {
 			console.log(err);
 		}

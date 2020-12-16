@@ -20,9 +20,9 @@
 		
 		<header class="header ctn">
 			<div class="header-left">
-				<h1>
-					<img src="assets/img/logo2.svg" alt="" />
-				</h1>
+				<h2 class="logo-ctn">
+					<img class="img-fluid" src="assets/img/logo2.svg" alt="okupas netlix logo" />
+				</h2>
 				<input
 					class="search-input"
 					type="search"
@@ -37,18 +37,24 @@
 		</header>
 		<main class="main">
 			<div class="main-overlay"></div>
-			<div class="main-video absolute-remove-js">
+			<div class="main-video">
 				<video id="video" class="img-fluid" src="assets/video/bojackk.mp4" loop ><video>
 			</div>
-			<button id="volume" class="main-volume absolute-remove-js">
+			<button id="volume" class="main-volume">
 				<img class="img-fluid" src="assets/img/volume.svg" alt="volume icon">
 			</button>
 			<section id="main-content" class="main-content">
-				<h2 id="movie-title" class="movie-info-title"></h2>
-				<p id="movie-info" class="movie-info"></p>
-				<div class="movie-info-buttons">
-					<button class="btn">Reproducir</button>
-					<button class="btn">+Mi lista</button>
+				<!--     overflow: hidden;
+    margin-right: 0;
+    text-overflow: ellipsis;
+    width: 100%; -->
+				<div class="main-view">
+					<h1 id="movie-title" class="movie-info-title"></h1>
+					<p id="movie-info" class="movie-info"></p>
+					<div class="movie-info-buttons">
+						<button class="btn">Reproducir</button>
+						<button class="btn">+Mi lista</button>
+					</div>
 				</div>
 			</section>
 			<nav class="main-nav">
@@ -78,11 +84,25 @@
 			<br />
 			y con la api de imdb
 		</footer>
-		<template id="slider-template">
-			<figure>
-				<img>
-				<figcaption>
-			</figure>
+		
+		<template id="details-view">
+			<h1 class="movie-title">bojackk jorsman</h1>
+			<img class="poster" src="" alt="">
+			<div class="aditional">
+				<span>2016-2018</span>
+				<span>16+</span>
+				<span>5 tempossss</span>
+			</div>
+			casting:
+			<ul>
+				<li>yo</li>
+				<li>sdasd</li>
+				<li>sdasd</li>
+				<li>sdasd</li>
+				<li>sdasd</li>
+			</ul>
+			<h4>Created by: doasdasod</h4>
+			<h4>genre: dsadas</h4>
 		</template>
 		<script src="js/app.js"  type="module"></script>
 	</body>
