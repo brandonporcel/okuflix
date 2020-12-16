@@ -48,13 +48,33 @@
     margin-right: 0;
     text-overflow: ellipsis;
     width: 100%; -->
-				<div class="main-view">
+				<div class="main-view none">
 					<h1 id="movie-title" class="movie-info-title"></h1>
 					<p id="movie-info" class="movie-info"></p>
 					<div class="movie-info-buttons">
 						<button class="btn">Reproducir</button>
 						<button class="btn">+Mi lista</button>
 					</div>
+				</div>
+				<div class="details-view">
+					<div class="movie-data">
+							<img id="poster" class="poster" src="" alt="" />
+							<span id="year">2016-2018</span>
+							<span id="rated">16+</span>
+							<span id="totalSeasons">5 tempossss</span>
+						</div>
+						<div class="credit-summary-item">
+							<h4 class="credit-summary-category">Actores: </h4>
+							<span id="actors" class="credit-summary-text"></span>
+						</div>
+						<div class="credit-summary-item">
+							<h4 class="credit-summary-category">Escrito por: </h4>
+							<span id="writer" class="credit-summary-text"></span>
+						</div>
+						<div class="credit-summary-item">
+							<h4 class="credit-summary-category">Genero: </h4>
+							<span id="genre" class="credit-summary-text"></span>
+						</div>
 				</div>
 			</section>
 			<nav class="main-nav">
@@ -94,16 +114,16 @@
 				<span>5 tempossss</span>
 			</div>
 			<div class="credit-summary-item">
-				<h4 class="credit-summary-category">Casting:</h4>
-				<span class="credit-summary-text">dsadsada</span>
+				<h4 class="credit-summary-category">Casting: </h4>
+				<span class="credit-summary-text"></span>
 			</div>
 			<div class="credit-summary-item">
-				<h4 class="credit-summary-category">Created by:</h4>
-				<span class="credit-summary-text">dsadsada</span>
+				<h4 class="credit-summary-category">Writ by: </h4>
+				<span class="credit-summary-text"></span>
 			</div>
 			<div class="credit-summary-item">
-				<h4 class="credit-summary-category">Genre:</h4>
-				<span class="credit-summary-text">dsadsada</span>
+				<h4 class="credit-summary-category">Genre: </h4>
+				<span class="credit-summary-text"></span>
 			</div>
 		</template>
 		<script src="js/app.js"  type="module"></script>

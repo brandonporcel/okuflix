@@ -16,6 +16,11 @@ export function contenidoPrincipal() {
 			const bojackInfo = await res.json();
 			$movieInfo.innerHTML = bojackInfo.Plot;
 			$movieTitle.innerHTML = bojackInfo.Title;
+
+			d.getElementById('poster').src = bojackInfo.Poster;
+			d.getElementById('writer').innerHTML = bojackInfo.Writer;
+			d.getElementById('actors').innerHTML = bojackInfo.Actors;
+			d.getElementById('genre').innerHTML = bojackInfo.Genre;
 		} catch (err) {
 			console.log(err);
 			const message = err.statusText || 'ocurrio un fallo con la informacion';
@@ -23,31 +28,17 @@ export function contenidoPrincipal() {
 			$movieTitle.innerHTML = `error ${err.status}: ${message}`;
 		}
 	};
-	const llamadoDetalles = async () => {
-		const $contentCtn = d.getElementById('main-content');
-		const $temaplateTag = d.getElementById('details-view').content;
-		console.log($temaplateTag);
-		try {
-			const res = await fetch('pages/detalles.html');
-			const text = await res.text();
-			$contentCtn.innerHTML = text;
-			d.querySelector('.details-view').innerHTML = 'detalees';
-		} catch (err) {
-			console.log(err);
-		}
-	};
+
 	const nav = () => {
 		d.querySelector('.nav-first-item').classList.add('active');
 		d.addEventListener('click', (e) => {
 			if (e.target.matches('.nav-first-item')) {
 				e.target.classList.add('active');
 				d.querySelector('.nav-second-item').classList.remove('active');
-				llamadoPrincipal();
 			}
 			if (e.target.matches('.nav-second-item')) {
 				e.target.classList.add('active');
 				d.querySelector('.nav-first-item').classList.remove('active');
-				llamadoDetalles();
 			}
 		});
 	};
