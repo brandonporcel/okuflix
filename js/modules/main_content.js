@@ -2,7 +2,6 @@ const d = document;
 export function contenidoPrincipal() {
 	const $movieInfo = d.getElementById('movie-info');
 	const $movieTitle = d.getElementById('movie-title');
-	const $navItems = d.querySelectorAll('.main-nav-item');
 	const api = async () => {
 		try {
 			const res = await fetch(
@@ -24,20 +23,19 @@ export function contenidoPrincipal() {
 			$movieTitle.innerHTML = `error ${err.status}: ${message}`;
 		}
 	};
-	api();
 	const nav = () => {
 		d.querySelector('.nav-first-item').classList.add('active');
-		$navItems.forEach((item) => {
-			item.addEventListener('click', (e) => {
-				if (!e.target.matches('nav-first-item')) {
-					d.querySelector('.nav-first-item').classList.remove('active');
-					e.target.classList.add('active');
-				} else {
-					d.querySelector('.nav-first-item').classList.add('active');
-					// aca deberia hacer algo como-> todo aquel elemento que tenga clase active,eliminar but I CANTTT DO IT
-				}
-			});
+		d.addEventListener('click', (e) => {
+			if (e.target.matches('.nav-first-item')) {
+				e.target.classList.add('active');
+				d.querySelector('.nav-second-item').classList.remove('active');
+			}
+			if (e.target.matches('.nav-second-item')) {
+				e.target.classList.add('active');
+				d.querySelector('.nav-first-item').classList.remove('active');
+			}
 		});
 	};
+	api();
 	nav();
 }
