@@ -225,6 +225,14 @@ body *::selection {
 		transform: rotate(360deg);
 	}
 }
+/* DETAILS VIEW */
+.credit-summary-item {
+	padding-bottom: 5px;
+}
+.credit-summary-category {
+	color: #666666;
+	display: inline;
+}
 @media screen and (min-width: 1024px) {
 	.btn:hover {
 		cursor: pointer;

@@ -25,10 +25,14 @@ export function contenidoPrincipal() {
 	};
 	const llamadoDetalles = async () => {
 		const $contentCtn = d.getElementById('main-content');
+		const $temaplateTag = d.getElementById('details-view').content;
+		console.log($temaplateTag);
+
 		try {
 			const res = await fetch('pages/detalles.html');
 			const text = await res.text();
 			$contentCtn.innerHTML = text;
+			// d.querySelector('.poster').innerHTML = te
 		} catch (err) {
 			console.log(err);
 		}

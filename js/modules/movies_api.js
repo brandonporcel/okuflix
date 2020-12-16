@@ -53,7 +53,6 @@ export function consumiendoApi() {
 					</figure>`;
 					return $animeTemplate;
 				};
-
 				$animeSlider.innerHTML = animeDataTemplate();
 			});
 		})
