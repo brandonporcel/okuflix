@@ -44,10 +44,15 @@ export function contenidoPrincipal() {
 			if (e.target === $overviewBtn) {
 				e.target.classList.add('active');
 				$detailsBtn.classList.remove('active');
+
+				$detailsCtn.classList.add('none');
+				$overviewCtn.classList.remove('none');
 			}
 			if (e.target === $detailsBtn) {
 				e.target.classList.add('active');
 				$overviewBtn.classList.remove('active');
+				$overviewCtn.classList.add('none');
+				$detailsCtn.classList.remove('none');
 			}
 		});
 	};
