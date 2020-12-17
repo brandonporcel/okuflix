@@ -9,6 +9,7 @@ html {
 :root {
 	--red: #e50914;
 	--white: #f2f2f2;
+	--white-modal: rgba(242, 242, 242, 0.75);
 	--gray: #101011;
 	--gray-modal: rgba(66, 66, 67, 0.75);
 	--black: #030303;
@@ -21,7 +22,7 @@ body {
 	color: var(--white);
 }
 body *::selection {
-	background-color: var(--black);
+	background-color: var(--red);
 }
 /* general styles */
 .ctn {
@@ -79,7 +80,7 @@ body *::selection {
 	outline: none;
 	color: inherit;
 	background-color: var(--gray);
-	border: 0.5px solid var(--gray-modal);
+	border: 1px solid var(--white-modal);
 	padding: 0 10px;
 }
 .header-right {
@@ -179,7 +180,7 @@ body *::selection {
 	height: 4px;
 	background-color: var(--red);
 	position: absolute;
-	bottom: -10px;
+	bottom: -11px;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
@@ -240,6 +241,16 @@ body *::selection {
 .data-poster {
 	width: 30%;
 	display: block;
+}
+/* QUERY SEARCHERERERERRE */
+.query-result-ctn {
+	height: 400px;
+	width: 100%;
+	background-color: salmon;
+}
+.query-title {
+	font-size: 32px;
+	font-weight: bold;
 }
 @media screen and (min-width: 1024px) {
 	.btn:hover {

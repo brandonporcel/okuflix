@@ -44,7 +44,6 @@ export function contenidoPrincipal() {
 			if (e.target === $overviewBtn) {
 				e.target.classList.add('active');
 				$detailsBtn.classList.remove('active');
-
 				$detailsCtn.classList.add('none');
 				$overviewCtn.classList.remove('none');
 			}

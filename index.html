@@ -5,6 +5,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Okuflix</title>
+		<!-- favicon -->
+		<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
 		<!-- GOOGLE FONTS -->
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
 		<link
@@ -17,7 +19,6 @@
 		<link rel="stylesheet" href="css/styles.css" />
 	</head>
 	<body>
-		
 		<header class="header ctn">
 			<div class="header-left">
 				<h2 class="logo-ctn">
@@ -26,7 +27,7 @@
 				<input
 					class="search-input"
 					type="search"
-					id=""
+					id="search-input"
 					placeholder="Estoy buscando..."
 				/>
 			</div>
@@ -84,8 +85,14 @@
 				<span class="main-nav-item nav-second-item">Detalles</span>
 			</nav>
 		</main>
-		<div id="cont"></div>
-		
+		<article class="list-container ctn query-ctn none">
+			<h3>Resultados de la busqueda: <span id="query-title-result">sda</span></h3>
+			<div id="query-result-ctn" class="query-result-ctn">
+				<span class="query-title">La Haine</span>
+				<img class="query-title" src="" alt="">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ab autem unde tempora, aliquid, magni aliquam magnam adipisci odio alias, facilis dolorum neque dolorem veniam vitae nesciunt reiciendis optio nisi.</p>
+			</div>
+		</article>
 		<article class="list-container ctn">
 			<h3>best city ever</h3>
 			<div class="slider bsas-slider">
@@ -106,28 +113,6 @@
 			<br />
 			y con la api de imdb
 		</footer>
-		
-		<template id="details-view">
-			<h1 class="movie-title"></h1>
-			<!-- <img class="poster" src="" alt=""> -->
-			<div class="aditional">
-				<span>2016-2018</span>
-				<span>16+</span>
-				<span>5 tempossss</span>
-			</div>
-			<div class="credit-summary-item">
-				<h4 class="credit-summary-category">Casting: </h4>
-				<span class="credit-summary-text"></span>
-			</div>
-			<div class="credit-summary-item">
-				<h4 class="credit-summary-category">Writ by: </h4>
-				<span class="credit-summary-text"></span>
-			</div>
-			<div class="credit-summary-item">
-				<h4 class="credit-summary-category">Genre: </h4>
-				<span class="credit-summary-text"></span>
-			</div>
-		</template>
 		<script src="js/app.js"  type="module"></script>
 	</body>
 </html>

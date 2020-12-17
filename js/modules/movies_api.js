@@ -16,11 +16,12 @@ export function consumiendoApi() {
 		.then((responses) =>
 			Promise.all(
 				responses.map((eachResponse) => {
-					if (!eachResponse.ok)
-						throw {
+					if (!eachResponse.ok) {
+						throw new Error({
 							status: eachResponse.status,
 							statusText: eachResponse.statusText,
-						};
+						});
+					}
 					return eachResponse.json();
 				})
 			)
