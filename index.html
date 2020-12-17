@@ -45,10 +45,6 @@
 				<img class="img-fluid" src="assets/img/volume.svg" alt="volume icon">
 			</button>
 			<section id="main-content" class="main-content">
-				<!--     overflow: hidden;
-    margin-right: 0;
-    text-overflow: ellipsis;
-    width: 100%; -->
 				<div id="overview-view">
 					<h1 id="movie-title" class="movie-info-title"></h1>
 					<p id="movie-info" class="movie-info"></p>
@@ -86,12 +82,7 @@
 			</nav>
 		</main>
 		<article class="list-container ctn query-ctn none">
-			<h3>Resultados de la busqueda: <span id="query-title-result">sda</span></h3>
-			<div id="query-result-ctn" class="query-result-ctn">
-				<span class="query-title">La Haine</span>
-				<img class="query-title" src="" alt="">
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ab autem unde tempora, aliquid, magni aliquam magnam adipisci odio alias, facilis dolorum neque dolorem veniam vitae nesciunt reiciendis optio nisi.</p>
-			</div>
+
 		</article>
 		<article class="list-container ctn">
 			<h3>best city ever</h3>
@@ -114,5 +105,30 @@
 			y con la api de imdb
 		</footer>
 		<script src="js/app.js"  type="module"></script>
+		<template id="query-template">
+			<h3>Resultados de la busqueda: <span id="query-title-result">sda</span></h3>
+			<div id="query-result-ctn" class="query-result-ctn">
+				<span class="query-title"></span>
+				<img class="query-poster data-poster">
+				<span id="query-year"></span>
+							|
+				<span id="query-rated"></span>
+							|
+				<span id="query-total-seasons"></span>
+				<p class="query-plot"></p>
+				<div class="credit-summary-item">
+					<h4 class="credit-summary-category">Actores: </h4>
+					<span id="query-actors" class="credit-summary-text"></span>
+				</div>
+				<div class="credit-summary-item">
+					<h4 class="credit-summary-category">Escrito por: </h4>
+					<span id="query-writer" class="credit-summary-text"></span>
+				</div>
+				<div class="credit-summary-item">
+					<h4 class="credit-summary-category">Genero: </h4>
+					<span id="query-genre" class="credit-summary-text"></span>
+				</div>
+			</div>
+		</template>
 	</body>
 </html>

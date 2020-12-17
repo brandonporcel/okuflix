@@ -9,8 +9,12 @@ export function buscador() {
 				try {
 					const query = $searchInput.value.toLowerCase();
 					const key = 'c075c45e';
-					$queryResultCtn.innerHTML =
-						'<img class="loader" src="assets/img/loader.svg" alt="loader">';
+					// $queryResultCtn.insertAdjacentHTML(
+					// 	'afterbegin',
+					// 	'<img class="loader" src="assets/img/loader.svg" alt="loader">'
+					// );
+					// $queryResultCtn.innerHTML =
+					// 	'<img class="loader" src="assets/img/loader.svg" alt="loader">';
 					d.querySelector('.query-ctn').classList.remove('none');
 					w.scrollTo({
 						behavior: 'smooth',
@@ -27,8 +31,19 @@ export function buscador() {
 							statusText: res.statusText,
 						});
 					}
+					console.log(res);
+					console.log(movie);
+					// $queryResultCtn.innerHTML = '';
+					// $queryResultCtn.insertAdjacentHTML('afterbegin', '');
+					d.querySelector('.query-title').innerHTML = movie.Title;
+					d.querySelector('.query-poster').src = movie.Poster;
+					d.querySelector('.query-poster').alt = movie.Title;
+					d.querySelector('.query-plot').innerHTML = movie.Plot;
+					d.getElementById('query-actors').innerHTML = movie.Actors;
+					d.getElementById('query-writer').innerHTML = movie.Writer;
+					d.getElementById('query-genre').innerHTML = movie.Genre;
 				} catch (err) {
-					const message = err.statusText || 'ocurrio un err';
+					const message = err.statusText || 'ocurrio un error';
 					$queryResultCtn.classList.add('error');
 					$queryResultCtn.innerHTML = `error ${err.status}: ${message}`;
 				}

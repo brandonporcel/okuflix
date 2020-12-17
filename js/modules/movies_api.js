@@ -58,7 +58,7 @@ export function consumiendoApi() {
 			});
 		})
 		.catch((err) => {
-			const message = err.statusText || 'ocurrio un err';
+			const message = err.statusText || 'ocurrio un error';
 			$sliders.forEach((el) => {
 				el.classList.add('error');
 				el.innerHTML = `error ${err.status}: ${message}`;
