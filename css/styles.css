@@ -239,15 +239,15 @@ body *::selection {
 	padding-bottom: 25px;
 }
 .data-poster {
-	width: 30%;
+	height: 300px;
 	display: block;
 }
 /* QUERY SEARCHERERERERRE */
 
 .query-result-ctn {
+	border: 1px solid salmon;
 	height: 500px;
-	width: 50%;
-	background-color: salmon;
+	width: 100%;
 }
 .query-title {
 	font-size: 32px;
