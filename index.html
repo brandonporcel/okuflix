@@ -31,10 +31,7 @@
 					placeholder="Estoy buscando..."
 				/>
 			</div>
-			<div class="header-right">
-				<div class="circulito"></div>
-				<div class="circulito"></div>
-			</div>
+			<div class="circulito"></div>
 		</header>
 		<main class="main">
 			<div class="main-overlay"></div>
@@ -53,7 +50,7 @@
 						<button class="btn">+Mi lista</button>
 					</div>
 				</div>
-				<div id="details-view" class="none">
+				<div id="details-view" class="details-view none">
 					<div class="movie-data">
 							<img id="poster" class="data-poster"/>
 							<span id="year"></span>
@@ -81,9 +78,7 @@
 				<span class="main-nav-item nav-second-item">Detalles</span>
 			</nav>
 		</main>
-		<article class="list-container ctn query-ctn none">
-
-		</article>
+		<article class="list-container ctn query-ctn none"></article>
 		<article class="list-container ctn">
 			<h3>best city ever</h3>
 			<div class="slider bsas-slider">
@@ -96,22 +91,18 @@
 				<img class="loader" src="assets/img/loader.svg" alt="loader">
 			</div>
 		</article>
-		<footer>
-			<p>este sitioo fue creado por @brandonporcel</p>
-			<br />
-			gracias a https://www.behance.net/gallery/71839893/Netflix-Redesign y a
-			https://www.behance.net/gallery/93925195/NETFLIX-REDESIGN-UXUI-Movies-TV-Series
-			<br />
-			y con la api de imdb
+		<footer class="footer">
+			<p>este sitio fue realizado por <a class="footer-link" href="https://github.com/brandonporcel" target="_blank">brandon porcel</a></p>
+			<small>uwu</small>
 		</footer>
 		<script src="js/app.js"  type="module"></script>
 		<template id="query-template">
 			<h3>Resultados de la busqueda: <span id="query-title-result"></span></h3>
-			<div id="query-result-ctn" class="query-result-ctn">
+			<div class="query-result-ctn">
 				<span class="query-title"></span>
 				<img class="query-poster data-poster">
 				<span id="query-year"></span>
-							|
+							| 
 				<span id="query-rated"></span>
 							|
 				<span id="query-country"></span>

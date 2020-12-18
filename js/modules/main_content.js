@@ -35,7 +35,6 @@ export function contenidoPrincipal() {
 			$movieTitle.innerHTML = `error ${err.status}: ${message}`;
 		}
 	};
-
 	const nav = () => {
 		const $overviewBtn = d.querySelector('.nav-first-item');
 		const $detailsBtn = d.querySelector('.nav-second-item');
@@ -55,6 +54,13 @@ export function contenidoPrincipal() {
 			}
 		});
 	};
+	d.querySelector('.logo-ctn').addEventListener('click', () => {
+		window.scrollTo({
+			behavior: 'smooth',
+			left: 0,
+			top: 0,
+		});
+	});
 	api();
 	nav();
 }

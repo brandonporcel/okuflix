@@ -5,8 +5,10 @@ export function buscador() {
 	d.addEventListener('keyup', async (e) => {
 		if (e.target === $searchInput) {
 			if (e.key === 'Enter') {
+				const query = $searchInput.value.toLowerCase();
+				$searchInput.value = '';
+				$searchInput.focus();
 				try {
-					const query = $searchInput.value.toLowerCase();
 					const key = 'c075c45e';
 					const $templateContent = d.getElementById('query-template').content;
 					const $fragment = d.createDocumentFragment();
@@ -29,16 +31,14 @@ export function buscador() {
 					);
 
 					const movie = await res.json();
-					if (!res.ok) {
+					if (movie.Response === 'False' || !res.ok) {
 						throw new Error({
 							status: res.status,
 							statusText: res.statusText,
+							movieName: query,
 						});
 					}
-					if (movie.Response === 'False') {
-						d.getElementById('query-result-ctn').innerHTML =
-							'no encontramos esa pelicula';
-					}
+
 					$templateContent.getElementById(
 						'query-title-result'
 					).innerHTML = `'${query}'`;
@@ -65,12 +65,9 @@ export function buscador() {
 					d.querySelector('.query-ctn').innerHTML = '';
 					d.querySelector('.query-ctn').appendChild($fragment);
 				} catch (err) {
-					const message = err.statusText || 'ocurrio un error';
-					console.log(err);
-					// d.getElementById('query-result-ctn').classList.add('error');
-					// d.getElementById(
-					// 	'query-result-ctn'
-					// ).innerHTML = `error ${err.status}: ${message}`;
+					d.querySelector(
+						'.query-ctn'
+					).innerHTML = `<marK>no encontramos informacion sobre la pelicula: '${query}'</marK>`;
 				}
 			}
 		}
