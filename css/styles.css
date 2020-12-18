@@ -280,9 +280,6 @@ body *::selection {
 	}
 }
 @media screen and (max-width: 800px) {
-	.header {
-		background-color: red;
-	}
 	.data-poster {
 		height: 200px;
 	}
@@ -291,7 +288,6 @@ body *::selection {
 		font-size: 36px;
 	}
 	.movie-info {
-		color: red;
 		font-size: 13px;
 	}
 }
@@ -319,16 +315,30 @@ body *::selection {
 	.data-poster {
 		display: none;
 	}
+	img.query-poster {
+		display: block;
+	}
 	.credit-summary-item {
 		padding-bottom: 10px;
 	}
 	.circulito {
 		display: none;
 	}
+	.header {
+		justify-content: center;
+	}
+	.logo-ctn {
+		width: 75px;
+		height: 25px;
+		margin: 5px;
+	}
 	.search-input {
-		width: 50%;
+		width: 75%;
 	}
 	.ctn {
 		padding: 0 5px;
+	}
+	.main-overlay {
+		width: 70%;
 	}
 }
