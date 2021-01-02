@@ -27,7 +27,7 @@ export function buscador() {
 						left: 0,
 					});
 					const res = await fetch(
-						`http://www.omdbapi.com?t=${query}&apikey=${key}`
+						`https://www.omdbapi.com?t=${query}&apikey=${key}`
 					);
 
 					const movie = await res.json();
