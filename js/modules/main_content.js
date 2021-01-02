@@ -7,7 +7,7 @@ export function contenidoPrincipal() {
 		const $movieTitle = d.getElementById('movie-title');
 		try {
 			const res = await fetch(
-				'http://www.omdbapi.com/?t=bojack+horseman+&apikey=c075c45e'
+				'https://www.omdbapi.com/?t=bojack+horseman+&apikey=c075c45e'
 			);
 			if (!res.ok) {
 				throw new Error({
