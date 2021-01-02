@@ -3,7 +3,7 @@ export function consumiendoApi() {
 	const $sliders = d.querySelectorAll('.slider');
 	const $bsasSlider = d.querySelector('.bsas-slider');
 	const $animeSlider = d.querySelector('.anime-slider');
-	const baseUrl = 'http://www.omdbapi.com';
+	const baseUrl = 'https://www.omdbapi.com';
 	const key = 'c075c45e';
 	let bsAsData;
 	let animeData;
